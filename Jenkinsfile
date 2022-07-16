@@ -14,7 +14,7 @@ pipeline {
     }
         stage('package') {
             steps {
-                bat 'mvn clean package'
+                sh 'mvn clean package'
         }
     }
      /*  stage('Test') {
@@ -24,7 +24,7 @@ pipeline {
     } */
          stage('Deploy') {
             steps {
-                bat 'mvn install tomcat7:deploy'
+                sh 'mvn install tomcat7:deploy'
         }
     }
      stage('Notification') {
