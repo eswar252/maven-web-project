@@ -22,11 +22,11 @@ pipeline {
                 sh 'mvn test'
         }
     } 
-         stage('Deploy') {
+         /*stage('Deploy') {
             steps {
                 sh 'mvn install tomcat7:deploy'
         }
-    }
+    }*/
      stage('Notification') {
             steps {
                 slackSend channel: '#pipeline-jobs', color: 'good', iconEmoji: ':with:grin:', message: 'Build is succesful and deployed', tokenCredentialId: 'slack'
